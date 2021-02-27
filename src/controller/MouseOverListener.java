@@ -27,6 +27,7 @@ public abstract class MouseOverListener implements MouseListener {
     public abstract void mouseEntered(MouseEvent e);
 
     @Override
-    public void mouseExited(MouseEvent e){}
+    public void mouseExited(MouseEvent e) {
+    }
 
 }

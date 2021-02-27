@@ -3,7 +3,6 @@ package model;
 import model.booking.BookStrategy;
 import model.codes.BookingStatusCode;
 
-
 import java.io.Serializable;
 
 /**
@@ -11,10 +10,10 @@ import java.io.Serializable;
  */
 
 public class Account implements Serializable {
-    private String id;
-    private int accountNumber;
+    private final String id;
+    private final int accountNumber;
     private double balance;
-    private BookStrategy bookStrategy;
+    private final BookStrategy bookStrategy;
 
     public Account(String id, int accountNumber, double balance, BookStrategy bookStrategy) {
         this.id = id;

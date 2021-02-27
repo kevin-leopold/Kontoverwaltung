@@ -26,9 +26,9 @@ public class FileSavingStrategy implements SavingStrategy {
     @Override
     public void save(Account account) {
         ArrayList<Account> accounts = FileHandler.getInstance().readAccounts();
-        for(int i =0;i< accounts.size();i++){
-            if(accounts.get(i).getAccountNumber() == account.getAccountNumber()){
-                accounts.set(i,account);
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getAccountNumber() == account.getAccountNumber()) {
+                accounts.set(i, account);
                 FileHandler.getInstance().writeAccounts(accounts);
                 return;
             }
@@ -39,8 +39,8 @@ public class FileSavingStrategy implements SavingStrategy {
 
     @Override
     public void log(Account account, double amount) {
-        FileHandler.getInstance().writeLog(account.getId(),account.getAccountNumber(),
-                amount,account.getBalance()-amount,account.getBalance(),
+        FileHandler.getInstance().writeLog(account.getId(), account.getAccountNumber(),
+                amount, account.getBalance() - amount, account.getBalance(),
                 Formatter.dateFormatter.format(new Date()));
     }
 }

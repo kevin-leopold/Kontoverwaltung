@@ -25,7 +25,7 @@ public class View extends JFrame {
     private JLabel status;
     private JButton savingMode;
 
-    public View(){
+    public View() {
         super("Kontoverwaltung");
         init();
         setVisible(true);
@@ -35,15 +35,15 @@ public class View extends JFrame {
      * Initialisiert die View
      */
 
-    private void init(){
-        setMinimumSize(new Dimension(450,550));
+    private void init() {
+        setMinimumSize(new Dimension(450, 550));
         setLocationRelativeTo(null);
         setResizable(false);
-        mainpanel = new JPanel(new FlowLayout(FlowLayout.CENTER,40,40));
+        mainpanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 40, 40));
         header = new JLabel("Kontoverwaltung");
-        header.setFont(header.getFont().deriveFont(Font.BOLD,25));
+        header.setFont(header.getFont().deriveFont(Font.BOLD, 25));
         mainpanel.add(header);
-        inputpanel = new JPanel(new GridLayout(0,2,10,20));
+        inputpanel = new JPanel(new GridLayout(0, 2, 10, 20));
         accountNumber = new JTextField(TEXTFIELD_COLUMNS);
         accountNumberL = new JLabel("Kontonummer: ");
         id = new JTextField(TEXTFIELD_COLUMNS);
@@ -64,17 +64,17 @@ public class View extends JFrame {
         inputpanel.add(bookAmountL);
         inputpanel.add(bookAmount);
         mainpanel.add(inputpanel);
-        buttonpanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20,0));
+        buttonpanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 0));
         ok = new JButton("Ok");
         cancel = new JButton("Abbrechen");
         buttonpanel.add(ok);
         buttonpanel.add(cancel);
-        buttonpanel.setPreferredSize(new Dimension(450,buttonpanel.getPreferredSize().height));
+        buttonpanel.setPreferredSize(new Dimension(450, buttonpanel.getPreferredSize().height));
         mainpanel.add(buttonpanel);
         JPanel p = new JPanel();
         savingMode = new JButton("In Datenbank Speichern");
         p.add(savingMode);
-        p.setPreferredSize(new Dimension(450,p.getPreferredSize().height));
+        p.setPreferredSize(new Dimension(450, p.getPreferredSize().height));
         mainpanel.add(p);
         status = new JLabel();
         status.setForeground(Color.RED);
@@ -86,26 +86,26 @@ public class View extends JFrame {
      * Setzt die Textfelder zurück und leert sie
      */
 
-    public void reset(){
+    public void reset() {
         accountNumber.setText("");
         id.setText("");
         bookAmount.setText("");
         balance.setText("");
-       setSearchingMode();
+        setSearchingMode();
 
     }
 
     /**
      * Leert die Statuszeile
      */
-    public void clearStatus(){
+    public void clearStatus() {
         status.setText("");
     }
 
     /**
      * Verändert die View zum Buchungsmodus
      */
-    public void setBookingMode(){
+    public void setBookingMode() {
         accountNumber.setEditable(false);
         bookAmount.setEditable(true);
         ok.setActionCommand(ActionCommand.BOOKING);
@@ -115,7 +115,7 @@ public class View extends JFrame {
     /**
      * Verändert die View zum Suchmodus
      */
-    public void setSearchingMode(){
+    public void setSearchingMode() {
         accountNumber.setEditable(true);
         bookAmount.setEditable(false);
         ok.setActionCommand(ActionCommand.SEARCH);
@@ -124,11 +124,12 @@ public class View extends JFrame {
 
     /**
      * Setzt die Listener vom Controller fest.
+     *
      * @param c Controller
      */
 
 
-    public void setListeners(Controller c){
+    public void setListeners(Controller c) {
         ok.setActionCommand(ActionCommand.SEARCH);
         cancel.setActionCommand(ActionCommand.CANCEL);
         ok.addActionListener(c);

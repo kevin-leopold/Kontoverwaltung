@@ -15,8 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 public class Controller extends MouseOverListener implements ActionListener {
-    private View view;
-    private Model model;
+    private final View view;
+    private final Model model;
     public Controller(){
         model = new Model();
         view = new View();

@@ -3,11 +3,12 @@ package model.booking;
 import model.Account;
 import model.codes.BookingStatusCode;
 
-public class DefaultBookStrategy implements BookStrategy{
+public class DefaultBookStrategy implements BookStrategy {
     /**
      * Standart Buchungsvorgang
+     *
      * @param account Konto
-     * @param amount Betrag
+     * @param amount  Betrag
      * @return Gibt den Status zurück. Siehe {@link model.codes.BookingStatusCode}
      */
     @Override
