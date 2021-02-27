@@ -2,5 +2,5 @@
 SOLEI SWE
 
 ## Testdaten
-* 173932
-* 173442
+* 173932 Standardkonto 
+* 173442 Sparkonto
