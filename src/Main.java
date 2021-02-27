@@ -1,6 +1,11 @@
-public class Main {
+import controller.Controller;
 
+public class Main {
+    /**
+     * Main
+     * @param args args
+     */
     public static void main(String[] args) {
-        System.out.println("github test 2");
+        new Controller();
     }
 }
