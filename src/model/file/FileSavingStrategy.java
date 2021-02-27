@@ -45,17 +45,4 @@ public class FileSavingStrategy implements SavingStrategy {
                 amount, account.getBalance() - amount, account.getBalance(),
                 Formatter.dateFormatter.format(new Date()));
     }
-
-    /**
-     * Setzt die Datei auf ihre Standartwerte zurück
-     */
-
-    private void reset(){
-        Account account1 = new Account("TEST",  173932,300,new DefaultBookStrategy());
-        Account account2 = new Account("TEST2",  173442 , 10000, new SavingsBookStrategy());
-        ArrayList<Account> accounts = new ArrayList<>();
-        accounts.add(account1);
-        accounts.add(account2);
-        FileHandler.getInstance().writeAccounts(accounts);
-    }
 }

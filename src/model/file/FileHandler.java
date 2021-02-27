@@ -1,6 +1,8 @@
 package model.file;
 
 import model.Account;
+import model.booking.DefaultBookStrategy;
+import model.booking.SavingsBookStrategy;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -99,7 +101,16 @@ public class FileHandler {
         if (!new File(file).exists()) {
             try {
                 new File(file).createNewFile();
-            } catch (IOException ignored) {
+                if(file.equals(ACCOUNTS)){
+                    Account account1 = new Account("TEST",  173932,300,new DefaultBookStrategy());
+                    Account account2 = new Account("TEST2",  173442 , 10000, new SavingsBookStrategy());
+                    ArrayList<Account> accounts = new ArrayList<>();
+                    accounts.add(account1);
+                    accounts.add(account2);
+                    writeAccounts(accounts);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
