@@ -6,4 +6,4 @@ SOLEI SWE
 * 173442 Sparkonto
 
 ### Dokumentation
-  [Dkumentation](https://caworks-sl.de/kevin/java/doc/)
+  [Dokumentation](https://caworks-sl.de/kevin/java/doc/)
