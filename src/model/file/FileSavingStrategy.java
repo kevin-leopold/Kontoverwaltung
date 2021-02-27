@@ -3,6 +3,8 @@ package model.file;
 import model.Account;
 import model.Formatter;
 import model.SavingStrategy;
+import model.booking.DefaultBookStrategy;
+import model.booking.SavingsBookStrategy;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,5 +44,18 @@ public class FileSavingStrategy implements SavingStrategy {
         FileHandler.getInstance().writeLog(account.getId(), account.getAccountNumber(),
                 amount, account.getBalance() - amount, account.getBalance(),
                 Formatter.dateFormatter.format(new Date()));
+    }
+
+    /**
+     * Setzt die Datei auf ihre Standartwerte zurück
+     */
+
+    private void reset(){
+        Account account1 = new Account("TEST",  173932,300,new DefaultBookStrategy());
+        Account account2 = new Account("TEST2",  173442 , 10000, new SavingsBookStrategy());
+        ArrayList<Account> accounts = new ArrayList<>();
+        accounts.add(account1);
+        accounts.add(account2);
+        FileHandler.getInstance().writeAccounts(accounts);
     }
 }
